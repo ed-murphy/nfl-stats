@@ -1,0 +1,20 @@
+[project]
+name = "nflstats"
+version = "0.1.0"
+description = "Workspace for NFL stats and plots built on nflverse data"
+authors = [
+    { name = "ed-murphy", email = "edward.v.murphy@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "nflreadpy>=0.1.5",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "polars>=2.1.0",
+    "pyarrow>=26.0.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
