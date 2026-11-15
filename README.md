@@ -41,6 +41,16 @@ Each script saves a PNG to `plots/`. Common options:
 | `08_home_field_advantage.py` | Average home scoring margin by season | `--window` |
 | `09_pythagorean_luck.py` | Actual wins vs wins expected from points for/against | |
 | `10_team_season_arc.py` | One team's offense and defense EPA, game by game | `--team` |
+| `11_against_the_spread.py` | Average margin against the closing spread, with ATS records | |
+| `12_late_down_dependence.py` | Offense EPA on early downs vs third and fourth down | |
+| `13_kickoff_returns.py` | Share of kickoffs returned by season, with rule changes marked | |
+| `14_red_zone.py` | Red-zone trips per game vs touchdown rate per trip | |
+| `15_quarter_margins.py` | Heatmap of average scoring margin in each quarter | |
+| `16_fumble_luck.py` | Fumbles recovered vs expected at league-average recovery rates | |
+| `17_scoring_vs_totals.py` | Points per game by season against the closing over/under | |
+| `18_qb_depth_and_yac.py` | QB average depth of target vs yards after catch per completion | `--min-per-week` |
+| `19_sack_rates.py` | Sack rate by the defense vs sack rate allowed by the offense | |
+| `20_shotgun_trend.py` | Shotgun and no-huddle usage by season | |
 
 ## Layout
 
@@ -58,7 +68,7 @@ plots/         generated PNGs (git-ignored)
 
 The first run of a script downloads what it needs into `data/` (one parquet file per season of
 play-by-play). Later runs read from disk. The current season is re-downloaded when its copy is
-more than 12 hours old; pass `refresh=True` to any loader to force it. The trend scripts (03, 04)
+more than 12 hours old; pass `refresh=True` to any loader to force it. The play-by-play trend scripts (03, 04, 13, 20)
 download every season in their range on first run, about 27 files.
 
 ## Adding a stat
