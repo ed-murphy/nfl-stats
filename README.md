@@ -51,12 +51,13 @@ Each script saves a PNG to `plots/`. Common options:
 | `18_qb_depth_and_yac.py` | QB average depth of target vs yards after catch per completion | `--min-per-week` |
 | `19_sack_rates.py` | Sack rate by the defense vs sack rate allowed by the offense | |
 | `20_shotgun_trend.py` | Shotgun and no-huddle usage by season | |
+| `21_snap_counts.py` | Table of one team's snap counts by player and week, ordered by season total (Eagles by default) | `--team`, `--unit` |
 
 ## Layout
 
 ```
 src/nflstats/
-  data.py      cached loaders: load_pbp, load_schedules, load_teams, load_players
+  data.py      cached loaders: load_pbp, load_schedules, load_snap_counts, load_teams, load_players
   plotting.py  shared plot style, colors, and helpers (team scatter, diverging bars, titles)
   cli.py       shared command-line options
 scripts/       one script per stat

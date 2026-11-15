@@ -101,6 +101,17 @@ def load_players(refresh: bool = False) -> pd.DataFrame:
     return _cached("players", nfl.load_players, live=True, refresh=refresh)
 
 
+def load_snap_counts(season: int | None = None, refresh: bool = False) -> pd.DataFrame:
+    """Offense, defense and special-teams snaps per player per game (available from 2012)."""
+    season = current_season() if season is None else season
+    return _cached(
+        f"snap_counts_{season}",
+        lambda: nfl.load_snap_counts([season]),
+        live=season >= current_season(),
+        refresh=refresh,
+    )
+
+
 def regular_season(df: pd.DataFrame) -> pd.DataFrame:
     """Keep regular-season rows of a play-by-play or schedule table."""
     column = "season_type" if "season_type" in df.columns else "game_type"
